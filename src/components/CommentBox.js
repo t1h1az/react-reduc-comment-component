@@ -7,6 +7,7 @@ class CommentBox extends Component {
         <h4>Add a comment below...</h4>
         <form>
           <input />
+          <button type="submit"> Add comment ...</button>
         </form>
       </div>
     );
