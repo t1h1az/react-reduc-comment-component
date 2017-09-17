@@ -28,7 +28,10 @@ class CommentBox extends Component {
             </form>
           </div>
         <div className="row" style={{padding: 20}}>
-          <button className="waves-effect waves-light btn-large" type="submit"> Add comment ...</button>
+          <button
+            className="waves-effect waves-light btn-large"
+            type="submit"
+            onSubmit={this.onSubmit.bind(this)}> Add comment ...</button>
         </div>
       </div>
     );
