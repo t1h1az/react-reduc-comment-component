@@ -8,7 +8,7 @@ class CommentBox extends Component {
   }
 
   onHandleChange(event) {
-    this.state.comment = event.value;
+    this.setState({comment: event.target.value});
   };
 
   render() {
@@ -20,10 +20,9 @@ class CommentBox extends Component {
               <div className="row">
                 <div className="input-field col s12">
                   <textarea
-                    id="textarea1"
                     className="materialize-textarea"
+                    value={this.state.comment}
                     onChange={this.onHandleChange.bind(this)}></textarea>
-                  <label htmlFor="textarea1"></label>
                 </div>
               </div>
             </form>
