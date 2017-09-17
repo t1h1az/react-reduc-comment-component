@@ -6,6 +6,10 @@ class CommentBox extends Component {
 
     this.state = { comment: ''};
   }
+  onSubmit(event) {
+    this.setState({comment: ''});
+    event.preventDefault();
+  };
 
   onHandleChange(event) {
     this.setState({comment: event.target.value});
@@ -16,7 +20,9 @@ class CommentBox extends Component {
       <div className="comment-box row center-align" style={{margin: 0, padding: 20, border: "1px solid #e53935"}}>
         <h5 style={{padding: 20}}>Add a comment below...</h5>
           <div className="row">
-            <form className="col s12">
+            <form
+               className="col s12"
+               onSubmit={this.onSubmit.bind(this)}>
               <div className="row">
                 <div className="input-field col s12">
                   <textarea
@@ -25,14 +31,14 @@ class CommentBox extends Component {
                     onChange={this.onHandleChange.bind(this)}></textarea>
                 </div>
               </div>
+              <div className="row" style={{padding: 20}}>
+                <button
+                  className="waves-effect waves-light btn-large"
+                  type="submit"
+                  action="submit"> Add comment ...</button>
+              </div>
             </form>
           </div>
-        <div className="row" style={{padding: 20}}>
-          <button
-            className="waves-effect waves-light btn-large"
-            type="submit"
-            onSubmit={this.onSubmit.bind(this)}> Add comment ...</button>
-        </div>
       </div>
     );
   }
