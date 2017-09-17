@@ -11,7 +11,7 @@ describe('App Component Testing', () => {
   it('shows the correct test', (done) => {
     const component = renderComponent(App);
   // use expect to make an assertion about an target
-    expect(component).to.contain(' render this');
+    expect(component).to.contain('Comment Box');
     done();
   });
 });
