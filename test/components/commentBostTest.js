@@ -5,7 +5,7 @@ describe('CommentBox', () => {
   let commentBox;
 
   beforeEach(() => {
-    commentBox = renderComponent(CommentBox);
+     commentBox = renderComponent(CommentBox);
   });
 
   it('has a the correct class', () => {

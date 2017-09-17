@@ -5,13 +5,17 @@ import { renderComponent, expect } from '../test_helper.js';
 import App from '../../src/components/app';
 
 // Describe groups similar tests
-describe('App Component Testing', () => {
-
+describe('App', () => {
+  let component;
+  // create the component before each test
+  beforeEach(() => {
+    component = renderComponent(App);
+  });
   // use it to test a single attribute of a target
-  it('shows the correct test', (done) => {
-    const component = renderComponent(App);
+
+  it('shows a comment box', () => {
   // use expect to make an assertion about an target
-    expect(component).to.contain('Comment Box');
-    done();
+    expect(component.find('.comment-box')).to.exist;
+
   });
 });
