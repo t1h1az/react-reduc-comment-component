@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { addComment } from '../actions/index';
 
 class CommentBox extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { comment: ''};
+    this.onSubmit = this.onSubmit.bind(this);
+    this.state = {
+      comment: ''
+    };
   }
   onSubmit(event) {
-    this.setState({comment: ''});
     event.preventDefault();
+    this.props.addComment(this.state.comment);
+    this.setState({comment: ''});
+
   };
 
   onHandleChange(event) {
     this.setState({comment: event.target.value});
+
   };
 
   render() {
@@ -44,4 +53,8 @@ class CommentBox extends Component {
   }
 }
 
-export default CommentBox;
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({ addComment }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(CommentBox);
