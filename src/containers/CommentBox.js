@@ -12,16 +12,15 @@ class CommentBox extends Component {
       comment: ''
     };
   }
+  
   onSubmit(event) {
     event.preventDefault();
     this.props.addComment(this.state.comment);
     this.setState({comment: ''});
-
   };
 
   onHandleChange(event) {
     this.setState({comment: event.target.value});
-
   };
 
   render() {

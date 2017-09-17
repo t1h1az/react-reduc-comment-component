@@ -8,19 +8,26 @@ class CommentList extends Component {
   }
 
   renderCommentList(singleComment) {
-    console.log(singleComment);
-    return <li key={singleComment}>{singleComment}</li>
+    return (
+      <div>
+        <li
+          className="row center-align"
+          key={singleComment}
+          style={{margin: 20, padding: 20}}>
+            {singleComment}
+        </li>
+      </div>
+    );
   }
 
   render() {
     return (
-      <ul>
+      <ul style={{margin: 0, padding: 20, border: "1px solid #e53935"}}>
         {this.props.commentList.map(this.renderCommentList)}
       </ul>
     );
   }
 }
-
 
 function mapStateToProps(state) {
   return { commentList: state.commentList};
