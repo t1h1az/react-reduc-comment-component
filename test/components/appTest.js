@@ -1,6 +1,6 @@
 // Here the app component is tested
 // We import 2 TestHelper
-import { renderComponent, expect } from '../test_helper.js';
+import { renderComponent, expect } from '../test_helper';
 // import component
 import App from '../../src/components/app';
 

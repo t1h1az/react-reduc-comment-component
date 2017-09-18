@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import commentListReducer from './commentListReducer';
+import commentsReducer from './commentsReducer';
 // import newCommentReducer from './newCommentReducer';
 
 const rootReducer = combineReducers({
   // newComment: newCommentReducer,
-  commentList: commentListReducer
+  comments: commentsReducer
 });
 
 export default rootReducer;

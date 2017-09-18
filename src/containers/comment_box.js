@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
+// import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { addComment } from '../actions/index';
+// import { saveComment } from '../actions/index';
+import * as actions from '../actions';
 
 class CommentBox extends Component {
   constructor(props) {
@@ -12,10 +13,10 @@ class CommentBox extends Component {
       comment: ''
     };
   }
-  
+
   onSubmit(event) {
     event.preventDefault();
-    this.props.addComment(this.state.comment);
+    this.props.saveComment(this.state.comment);
     this.setState({comment: ''});
   };
 
@@ -53,7 +54,7 @@ class CommentBox extends Component {
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({ addComment }, dispatch);
+  return bindActionCreators({ saveComment }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(CommentBox);
+export default connect(null, actions)(CommentBox);

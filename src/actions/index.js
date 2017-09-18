@@ -1,8 +1,8 @@
-export const ADD_COMMENT = 'ADD_COMMENT';
+import { SAVE_COMMENT } from './types';
 
-export function addComment(comment) {
-    return ({
-      type: 'ADD_COMMENT',
+export function saveComment(comment) {
+    return {
+      type: SAVE_COMMENT,
       payload: comment
-    });
+    };
 };

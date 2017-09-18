@@ -1,5 +1,5 @@
 import { renderComponent, expect } from '../test_helper';
-import CommentBox from '../../src/containers/CommentBox';
+import CommentBox from '../../src/containers/comment_box';
 
 describe('CommentBox', () => {
   let commentBox;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CommentBox from '../containers/CommentBox';
-import CommentList from '../containers/CommentList';
+import CommentBox from '../containers/comment_box';
+import CommentList from '../containers/comment_list';
 import { connect } from 'react-redux';
 
 export default class App extends Component {
