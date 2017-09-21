@@ -6,7 +6,7 @@ describe('Commentlist', () => {
 
   beforeEach(() => {
     const props = { comments: ['new comment', 'another new comment'] };
-    component = renderComponent(CommentList, null, props);
+    component = renderComponent(CommentList, null, state);
   });
 
   it('has a the correct class', () => {
